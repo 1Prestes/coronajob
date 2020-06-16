@@ -4,7 +4,8 @@ const bodyParser = require('body-parser');
 const path = require('path');
 
 const sqlite = require('sqlite');
-const dbConnection = sqlite.open(path.join(__dirname, 'banco.sqlite'));
+const dbPath = path.resolve(__dirname, 'banco.sqlite');
+const dbConnection = sqlite.open(dbPath);
 
 const port = process.env.PORT || 3000;
 
