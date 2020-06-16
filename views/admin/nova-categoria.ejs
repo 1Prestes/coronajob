@@ -1,0 +1,19 @@
+<%- include('header') %>
+<h2>Nova categoria: <a href="/admin/categorias">Voltar</a></h2>
+<div>
+  <form method="post">
+    <label for="categoria">Nova categoria</label>
+    <input type="text" name="categoria" id="">
+    <br>
+    <label for="existentes-categorias">Categorias Existentes</label>
+    <select name="existentes-categorias" id="">
+      <% categorias.forEach(categoria => { %>
+      <option value="<%= categoria.id %>"><%= categoria.categoria %></option>
+
+      <% }) %>
+    </select>
+    <br>
+    <button>Cadastrar</button>
+  </form>
+</div>
+<%- include('footer') %>
