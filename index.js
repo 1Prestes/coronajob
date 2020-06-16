@@ -4,8 +4,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 
 const sqlite = require('sqlite');
-const dbPath = path.resolve(__dirname, 'banco.sqlite');
-const dbConnection = sqlite.open(dbPath);
+const dbConnection = sqlite.open(path.resolve(__dirname, 'banco.sqlite'), { Promise });
 
 const port = process.env.PORT || 3000;
 
